@@ -1,0 +1,87 @@
+$clouds: #ecf0f1;
+$purple: #9b59b6;
+$concrete: #95a5a6;
+$green: #1abc9c;
+
+$mono: 'Share Tech Mono', monospace;
+
+body {
+  text-align: center;
+  padding: 10%;
+  background-color: $purple;
+  
+  button {
+    border: none;
+    outline: none;
+    min-width: 15vw;
+    min-height: 5vw;
+    font-size: 3vw;
+    font-family: $mono;
+    color: $purple;
+    background-color: $green;
+    border: 0;
+    box-sizing: border-box;
+    position: relative;
+    vertical-align: middle;
+    transition: .25s ease-in;
+    
+    &:hover {
+      color: $clouds;
+    }
+    
+    &::before,
+    &::after {
+      box-sizing: inherit;
+      content: '';
+      position: absolute;
+      border: 2px solid transparent;
+      width: 0;
+      height: 0;
+    }
+    
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+    
+    &:hover::before,
+    &:hover::after {
+      width: 100%;
+      height: 100%;
+    }
+    
+    
+    &:hover::before {
+      border-top-color: $clouds;
+      border-right-color: $clouds;
+      transition:
+        width 0.25s ease-out,
+        height 0.25s ease-out 0.25s; 
+    }
+
+    &:hover::after {
+      border-bottom-color: $clouds;
+      border-left-color: $clouds;
+      transition:
+        border-color 0s ease-out 0.5s, 
+        width 0.25s ease-out 0.5s, 
+        height 0.25s ease-out 0.75s; 
+    }
+    
+    &:active {
+      background-color: $clouds;
+      color: $green;
+      border: 2px solid $green;
+      font-size: 2.75vw;
+    }
+    
+  }
+}
+
+// inspiration from Giana - thanks!
+// https://codepen.io/giana/pen/yYBpVY

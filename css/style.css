@@ -1,0 +1,59 @@
+body {
+  text-align: center;
+  padding: 10%;
+  background-color: #9b59b6;
+}
+body button {
+  border: none;
+  outline: none;
+  min-width: 15vw;
+  min-height: 5vw;
+  font-size: 3vw;
+  font-family: "Share Tech Mono", monospace;
+  color: #9b59b6;
+  background-color: #1abc9c;
+  border: 0;
+  box-sizing: border-box;
+  position: relative;
+  vertical-align: middle;
+  transition: .25s ease-in;
+}
+body button:hover {
+  color: #ecf0f1;
+}
+body button::before, body button::after {
+  box-sizing: inherit;
+  content: '';
+  position: absolute;
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+body button::before {
+  top: 0;
+  left: 0;
+}
+body button::after {
+  bottom: 0;
+  right: 0;
+}
+body button:hover::before, body button:hover::after {
+  width: 100%;
+  height: 100%;
+}
+body button:hover::before {
+  border-top-color: #ecf0f1;
+  border-right-color: #ecf0f1;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+body button:hover::after {
+  border-bottom-color: #ecf0f1;
+  border-left-color: #ecf0f1;
+  transition: border-color 0s ease-out 0.5s,  width 0.25s ease-out 0.5s,  height 0.25s ease-out 0.75s;
+}
+body button:active {
+  background-color: #ecf0f1;
+  color: #1abc9c;
+  border: 2px solid #1abc9c;
+  font-size: 2.75vw;
+}
